@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete Italian Language Learning Platform - Learn Italian from beginner to advanced level">
+    <title>Italian Academy - Learn Italian Online</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-globe"></i>
+                <span>Italian Academy</span>
+            </div>
+            <button class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#home" onclick="navigateTo('home')">Home</a></li>
+                <li class="dropdown">
+                    <a href="#learn">Learn <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#alphabet" onclick="navigateTo('alphabet')">Alphabet</a></li>
+                        <li><a href="#vocabulary" onclick="navigateTo('vocabulary')">Vocabulary</a></li>
+                        <li><a href="#grammar" onclick="navigateTo('grammar')">Grammar</a></li>
+                        <li><a href="#conversations" onclick="navigateTo('conversations')">Conversations</a></li>
+                    </ul>
+                </li>
+                <li><a href="#practice" onclick="navigateTo('practice')">Practice</a></li>
+                <li><a href="#progress" onclick="navigateTo('progress')">My Progress</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="app-container">
+        <!-- Home Section -->
+        <section id="home-section" class="hero">
+            <div class="hero-content">
+                <h1>Learn Italian Fluently</h1>
+                <p>From absolute beginner to advanced speaker in a structured, engaging way</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="navigateTo('levels')">Start Learning</button>
+                    <button class="btn btn-secondary" onclick="navigateTo('features')">Explore Features</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>5 Learning Levels</h3>
+                    <p>Beginner to Advanced</p>
+                </div>
+                <div class="hero-card">
+                    <i class="fas fa-volume-up"></i>
+                    <h3>Native Audio</h3>
+                    <p>Perfect Pronunciation</p>
+                </div>
+                <div class="hero-card">
+                    <i class="fas fa-tasks"></i>
+                    <h3>Interactive Exercises</h3>
+                    <p>Practice & Learn</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Levels Selection -->
+        <section id="levels-section" class="hidden">
+            <div class="container">
+                <h2>Choose Your Learning Level</h2>
+                <p class="section-subtitle">Select where you want to start your Italian journey</p>
+                <div class="levels-grid">
+                    <div class="level-card" onclick="selectLevel('beginner')">
+                        <div class="level-icon">1</div>
+                        <h3>Beginner</h3>
+                        <p>Start from zero knowledge</p>
+                        <ul>
+                            <li>Alphabet & Pronunciation</li>
+                            <li>Basic Greetings</li>
+                            <li>Simple Vocabulary</li>
+                        </ul>
+                        <button class="btn btn-primary-small">Start</button>
+                    </div>
+                    <div class="level-card" onclick="selectLevel('elementary')">
+                        <div class="level-icon">2</div>
+                        <h3>Elementary</h3>
+                        <p>Build foundation skills</p>
+                        <ul>
+                            <li>Essential Verbs</li>
+                            <li>Common Phrases</li>
+                            <li>Basic Grammar</li>
+                        </ul>
+                        <button class="btn btn-primary-small">Start</button>
+                    </div>
+                    <div class="level-card" onclick="selectLevel('intermediate')">
+                        <div class="level-icon">3</div>
+                        <h3>Intermediate</h3>
+                        <p>Expand your knowledge</p>
+                        <ul>
+                            <li>Complex Grammar</li>
+                            <li>Real Conversations</li>
+                            <li>Fluent Speaking</li>
+                        </ul>
+                        <button class="btn btn-primary-small">Start</button>
+                    </div>
+                    <div class="level-card" onclick="selectLevel('upper-intermediate')">
+                        <div class="level-icon">4</div>
+                        <h3>Upper Intermediate</h3>
+                        <p>Advanced communication</p>
+                        <ul>
+                            <li>Advanced Grammar</li>
+                            <li>Nuanced Expression</li>
+                            <li>Cultural Context</li>
+                        </ul>
+                        <button class="btn btn-primary-small">Start</button>
+                    </div>
+                    <div class="level-card" onclick="selectLevel('advanced')">
+                        <div class="level-icon">5</div>
+                        <h3>Advanced</h3>
+                        <p>Master the language</p>
+                        <ul>
+                            <li>Mastery Level</li>
+                            <li>Professional Italian</li>
+                            <li>Subjunctive & Beyond</li>
+                        </ul>
+                        <button class="btn btn-primary-small">Start</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alphabet Section -->
+        <section id="alphabet-section" class="hidden">
+            <div class="container">
+                <h2>Italian Alphabet & Pronunciation</h2>
+                <p class="section-subtitle">Master the Italian alphabet with native audio pronunciation</p>
+                
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="switchAlphabetTab('letters')">Letters</button>
+                    <button class="tab-btn" onclick="switchAlphabetTab('sounds')">Sounds & Rules</button>
+                    <button class="tab-btn" onclick="switchAlphabetTab('vowels')">Vowels & Consonants</button>
+                </div>
+
+                <div id="alphabet-letters" class="alphabet-grid">
+                    <div class="alphabet-card">
+                        <span class="letter">A</span>
+                        <span class="pronunciation">ah</span>
+                        <button class="audio-btn" onclick="playAudio('alphabet', 'a')"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="alphabet-card">
+                        <span class="letter">B</span>
+                        <span class="pronunciation">bee</span>
+                        <button class="audio-btn" onclick="playAudio('alphabet', 'b')"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="alphabet-card">
+                        <span class="letter">C</span>
+                        <span class="pronunciation">chee</span>
+                        <button class="audio-btn" onclick="playAudio('alphabet', 'c')"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="alphabet-card">
+                        <span class="letter">D</span>
+                        <span class="pronunciation">dee</span>
+                        <button class="audio-btn" onclick="playAudio('alphabet', 'd')"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="alphabet-card">
+                        <span class="letter">E</span>
+                        <span class="pronunciation">eh</span>
+                        <button class="audio-btn" onclick="playAudio('alphabet', 'e')"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="alphabet-card">
+                        <span class="letter">F</span>
+                        <span class="pronunciation">eff</span>
+                        <button class="audio-btn" onclick="playAudio('alphabet', 'f')"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="alphabet-card">
+                        <span class="letter">G</span>
+                        <span class="pronunciation">jee</span>
+                        <button class="audio-btn" onclick="playAudio('alphabet', 'g')"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="alphabet-card">
+                        <span class="letter">H</span>
+                        <span class="pronunciation">ahk-ah</span>
+                        <button class="audio-btn" onclick="playAudio('alphabet', 'h')"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="alphabet-card">
+                        <span class="letter">I</span>
+                        <span class="pronunciation">ee</span>
+                        <button class="audio-btn" onclick="playAudio('alphabet', 'i')"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="alphabet-card">
+                        <span class="letter">L</span>
+                        <span class="pronunciation">el-eh</span>
+                        <button class="audio-btn" onclick="playAudio('alphabet', 'l')"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="alphabet-card">
+                        <span class="letter">M</span>
+                        <span class="pronunciation">em-eh</span>
+                        <button class="audio-btn" onclick="playAudio('alphabet', 'm')"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="alphabet-card">
+                        <span class="letter">N</span>
+                        <span class="pronunciation">en-eh</span>
+                        <button class="audio-btn" onclick="playAudio('alphabet', 'n')"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="alphabet-card">
+                        <span class="letter">O</span>
+                        <span class="pronunciation">oh</span>
+                        <button class="audio-btn" onclick="playAudio('alphabet', 'o')"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="alphabet-card">
+                        <span class="letter">P</span>
+                        <span class="pronunciation">pee</span>
+                        <button class="audio-btn" onclick="playAudio('alphabet', 'p')"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="alphabet-card">
+                        <span class="letter">R</span>
+                        <span class="pronunciation">er-eh</span>
+                        <button class="audio-btn" onclick="playAudio('alphabet', 'r')"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="alphabet-card">
+                        <span class="letter">S</span>
+                        <span class="pronunciation">es-eh</span>
+                        <button class="audio-btn" onclick="playAudio('alphabet', 's')"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="alphabet-card">
+                        <span class="letter">T</span>
+                        <span class="pronunciation">tee</span>
+                        <button class="audio-btn" onclick="playAudio('alphabet', 't')"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="alphabet-card">
+                        <span class="letter">U</span>
+                        <span class="pronunciation">oo</span>
+                        <button class="audio-btn" onclick="playAudio('alphabet', 'u')"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="alphabet-card">
+                        <span class="letter">V</span>
+                        <span class="pronunciation">vee</span>
+                        <button class="audio-btn" onclick="playAudio('alphabet', 'v')"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="alphabet-card">
+                        <span class="letter">Z</span>
+                        <span class="pronunciation">zeh-tah</span>
+                        <button class="audio-btn" onclick="playAudio('alphabet', 'z')"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vocabulary Section -->
+        <section id="vocabulary-section" class="hidden">
+            <div class="container">
+                <h2>Italian Vocabulary</h2>
+                <p class="section-subtitle">Learn Italian words organized by themes</p>
+                
+                <div class="vocabulary-categories">
+                    <button class="category-btn active" onclick="loadVocabulary('greetings')">Greetings</button>
+                    <button class="category-btn" onclick="loadVocabulary('numbers')">Numbers</button>
+                    <button class="category-btn" onclick="loadVocabulary('colors')">Colors</button>
+                    <button class="category-btn" onclick="loadVocabulary('family')">Family</button>
+                    <button class="category-btn" onclick="loadVocabulary('food')">Food & Drinks</button>
+                    <button class="category-btn" onclick="loadVocabulary('daily')">Daily Life</button>
+                    <button class="category-btn" onclick="loadVocabulary('travel')">Travel</button>
+                    <button class="category-btn" onclick="loadVocabulary('shopping')">Shopping</button>
+                    <button class="category-btn" onclick="loadVocabulary('health')">Health</button>
+                    <button class="category-btn" onclick="loadVocabulary('weather')">Weather</button>
+                </div>
+
+                <div id="vocabulary-content" class="vocabulary-list"></div>
+            </div>
+        </section>
+
+        <!-- Grammar Section -->
+        <section id="grammar-section" class="hidden">
+            <div class="container">
+                <h2>Italian Grammar</h2>
+                <p class="section-subtitle">Master Italian grammar from basics to advanced</p>
+                
+                <div class="grammar-topics">
+                    <div class="topic-category">
+                        <h3>Fundamentals</h3>
+                        <button onclick="loadGrammar('articles')">Articles (il, la, i, le)</button>
+                        <button onclick="loadGrammar('nouns')">Nouns & Gender</button>
+                        <button onclick="loadGrammar('pronouns')">Pronouns</button>
+                    </div>
+                    <div class="topic-category">
+                        <h3>Verbs & Tenses</h3>
+                        <button onclick="loadGrammar('present')">Present Tense</button>
+                        <button onclick="loadGrammar('past')">Past Tenses</button>
+                        <button onclick="loadGrammar('future')">Future Tense</button>
+                        <button onclick="loadGrammar('conditional')">Conditional</button>
+                    </div>
+                    <div class="topic-category">
+                        <h3>Advanced</h3>
+                        <button onclick="loadGrammar('subjunctive')">Subjunctive Mood</button>
+                        <button onclick="loadGrammar('prepositions')">Prepositions</button>
+                        <button onclick="loadGrammar('adjectives')">Adjectives</button>
+                    </div>
+                </div>
+
+                <div id="grammar-content" class="grammar-lesson"></div>
+            </div>
+        </section>
+
+        <!-- Conversations Section -->
+        <section id="conversations-section" class="hidden">
+            <div class="container">
+                <h2>Real-Life Conversations</h2>
+                <p class="section-subtitle">Learn practical Italian for real situations</p>
+                
+                <div class="conversations-grid">
+                    <div class="conversation-card" onclick="loadConversation('greetings')">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Introductions</h3>
+                        <p>Introduce yourself and meet others</p>
+                    </div>
+                    <div class="conversation-card" onclick="loadConversation('food')">
+                        <i class="fas fa-utensils"></i>
+                        <h3>Ordering Food</h3>
+                        <p>Restaurant and café conversations</p>
+                    </div>
+                    <div class="conversation-card" onclick="loadConversation('directions')">
+                        <i class="fas fa-map"></i>
+                        <h3>Asking Directions</h3>
+                        <p>Navigate and ask for help</p>
+                    </div>
+                    <div class="conversation-card" onclick="loadConversation('shopping')">
+                        <i class="fas fa-shopping-bag"></i>
+                        <h3>Shopping</h3>
+                        <p>Buy clothes, souvenirs, and more</p>
+                    </div>
+                    <div class="conversation-card" onclick="loadConversation('hotel')">
+                        <i class="fas fa-hotel"></i>
+                        <h3>Hotel Check-in</h3>
+                        <p>Accommodation conversations</p>
+                    </div>
+                    <div class="conversation-card" onclick="loadConversation('emergency')">
+                        <i class="fas fa-hospital"></i>
+                        <h3>Doctor Visit</h3>
+                        <p>Health and medical situations</p>
+                    </div>
+                </div>
+
+                <div id="conversation-content" class="conversation-display"></div>
+            </div>
+        </section>
+
+        <!-- Practice Section -->
+        <section id="practice-section" class="hidden">
+            <div class="container">
+                <h2>Interactive Practice</h2>
+                <p class="section-subtitle">Exercise and test your Italian skills</p>
+                
+                <div class="practice-types">
+                    <button class="practice-card" onclick="startPractice('multiple-choice')">
+                        <i class="fas fa-tasks"></i>
+                        <h3>Multiple Choice</h3>
+                        <p>Choose the correct answer</p>
+                    </button>
+                    <button class="practice-card" onclick="startPractice('fill-blanks')">
+                        <i class="fas fa-pen"></i>
+                        <h3>Fill in the Blanks</h3>
+                        <p>Complete the sentences</p>
+                    </button>
+                    <button class="practice-card" onclick="startPractice('matching')">
+                        <i class="fas fa-link"></i>
+                        <h3>Matching</h3>
+                        <p>Match words and meanings</p>
+                    </button>
+                    <button class="practice-card" onclick="startPractice('listening')">
+                        <i class="fas fa-headphones"></i>
+                        <h3>Listening</h3>
+                        <p>Listen and comprehend</p>
+                    </button>
+                    <button class="practice-card" onclick="startPractice('speaking')">
+                        <i class="fas fa-microphone"></i>
+                        <h3>Speaking</h3>
+                        <p>Record and compare</p>
+                    </button>
+                    <button class="practice-card" onclick="startPractice('quiz')">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Quizzes</h3>
+                        <p>Test your knowledge</p>
+                    </button>
+                </div>
+
+                <div id="practice-content" class="practice-exercise"></div>
+            </div>
+        </section>
+
+        <!-- Progress Section -->
+        <section id="progress-section" class="hidden">
+            <div class="container">
+                <h2>Your Learning Progress</h2>
+                <p class="section-subtitle">Track your Italian learning journey</p>
+                
+                <div class="progress-dashboard">
+                    <div class="progress-card">
+                        <h3>Overall Progress</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 35%;"></div>
+                        </div>
+                        <p>35% Complete</p>
+                    </div>
+                    <div class="progress-card">
+                        <h3>Lessons Completed</h3>
+                        <div class="stat-number">24</div>
+                        <p>of 120 lessons</p>
+                    </div>
+                    <div class="progress-card">
+                        <h3>Quiz Score</h3>
+                        <div class="stat-number">78%</div>
+                        <p>Average score</p>
+                    </div>
+                    <div class="progress-card">
+                        <h3>Streak</h3>
+                        <div class="stat-number">7</div>
+                        <p>Days learning</p>
+                    </div>
+                </div>
+
+                <div class="learning-history">
+                    <h3>Recent Activity</h3>
+                    <div id="history-content" class="history-list"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Italian Academy. All rights reserved. | Learn Italian, Master Communication</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
